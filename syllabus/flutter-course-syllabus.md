@@ -1078,7 +1078,7 @@ Violations of academic integrity will result in disciplinary action according to
 
 This syllabus is subject to revision as needed. Students will be notified of any significant changes via official communication channels.
 
-**Last Updated:** November 2024  
+**Last Updated:** November 2025
 **Version:** 1.0
 
 ---
