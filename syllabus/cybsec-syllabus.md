@@ -49,7 +49,6 @@ Upon completion of this three-semester program, students will be able to:
 - DVWA (Damn Vulnerable Web Application)
 - Metasploitable 2 & 3
 - VulnHub machines (rotating selection)
-- DVCP (Damn Vulnerable Chemical Process) for ICS/SCADA exposure
 - Windows Server (Active Directory lab)
 - Ubuntu Server (Linux hardening exercises)
 
