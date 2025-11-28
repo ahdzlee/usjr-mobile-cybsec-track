@@ -172,14 +172,15 @@
 .section-title {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
     color: var(--primary);
     margin-bottom: 0.8em;
 }
 
-.section-title i {
-    width: 40px;
-    height: 40px;
+.section-title > .lucide {
+  width: 0.8em;
+  height: 0.8em;
+  flex-shrink: 0;
 }
 
 .section-title.semester-1 { color: #0468D7; font-size: 1.6em; }
