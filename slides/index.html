@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flutter Specialization Track - Mobile App Development</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Reveal.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css"
+    />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Theme -->
+    <link rel="stylesheet" href="styles/custom.css" />
+  </head>
+  <body>
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+      <span class="sun-icon">&#9728;</span>
+      <span class="moon-icon">&#9790;</span>
+    </button>
+
+    <div class="reveal">
+      <div class="slides">
+        <!-- SLIDE 1: Hero/Title Slide -->
+        <section data-transition="zoom" class="hero-slide">
+          <div class="hero-content">
+            <div class="flutter-logo-container">
+              <img
+                src="https://storage.googleapis.com/cms-storage-bucket/6e19fee6b47b36ca613f.png"
+                alt="Flutter Logo"
+                class="flutter-logo"
+              />
+            </div>
+            <h1 class="hero-title">Mobile Applications Development</h1>
+            <h2 class="hero-subtitle">Flutter Specialization Track</h2>
+            <p class="hero-tagline">
+              Build the Future of Mobile — One Codebase, Infinite Possibilities
+            </p>
+            <div class="hero-badges">
+              <span class="badge"
+                ><i data-lucide="smartphone"></i> Cross-Platform</span
+              >
+              <span class="badge"><i data-lucide="zap"></i> Hot Reload</span>
+              <span class="badge"
+                ><i data-lucide="layers"></i> Rich Ecosystem</span
+              >
+            </div>
+            <div class="course-info">
+              <span><i data-lucide="calendar"></i> 3 Semesters</span>
+              <span><i data-lucide="clock"></i> 3 Hours/Week</span>
+              <span><i data-lucide="graduation-cap"></i> 2nd Year BSIT</span>
+            </div>
+          </div>
+          <aside class="notes">
+            <strong>Time: 1-2 minutes</strong><br />
+            Welcome students to the Flutter Specialization Track. Ask: "Have you
+            ever wondered how apps like Instagram work on both iOS and Android?"
+            Emphasize this is a journey from beginner to professional developer.
+          </aside>
+        </section>
+
+        <!-- SLIDE 2: Why Choose Flutter? -->
+        <section data-transition="slide">
+          <h2 class="section-title">
+            <i data-lucide="help-circle"></i> Why Choose Flutter?
+          </h2>
+          <div class="feature-grid">
+            <div class="feature-card fragment fade-up">
+              <div class="feature-icon"><i data-lucide="code-2"></i></div>
+              <h3>Single Codebase</h3>
+              <p>Write once, deploy to iOS, Android, Web, and Desktop</p>
+            </div>
+            <div class="feature-card fragment fade-up">
+              <div class="feature-icon"><i data-lucide="zap"></i></div>
+              <h3>Hot Reload</h3>
+              <p>See changes instantly without losing app state</p>
+            </div>
+            <div class="feature-card fragment fade-up">
+              <div class="feature-icon"><i data-lucide="palette"></i></div>
+              <h3>Beautiful UIs</h3>
+              <p>Rich widgets and customizable components</p>
+            </div>
+            <div class="feature-card fragment fade-up">
+              <div class="feature-icon"><i data-lucide="rocket"></i></div>
+              <h3>Native Performance</h3>
+              <p>Compiled to native ARM code for speed</p>
+            </div>
+          </div>
+          <div class="companies-using fragment fade-in">
+            <p class="small-text">
+              Trusted by: <strong>Google Pay</strong> • <strong>BMW</strong> •
+              <strong>Alibaba</strong> • <strong>eBay</strong> •
+              <strong>Toyota</strong>
+            </p>
+          </div>
+          <aside class="notes">
+            <strong>Time: 2 minutes</strong><br />
+            Highlight the business value: companies save 50%+ development costs.
+            Mention job market demand is growing rapidly.
+          </aside>
+        </section>
+
+        <!-- SLIDE 3: Course Overview - 3 Semester Journey -->
+        <section data-transition="slide">
+          <h2 class="section-title">
+            <i data-lucide="map"></i> Your 3-Semester Journey
+          </h2>
+          <div class="timeline">
+            <div class="timeline-item fragment fade-right">
+              <div class="timeline-marker sem1"></div>
+              <div class="timeline-content">
+                <h3>Semester 1</h3>
+                <h4>Foundations</h4>
+                <p>UI/UX, State Management, Testing</p>
+                <div class="timeline-tags">
+                  <span>Dart</span><span>Widgets</span><span>Riverpod</span>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item fragment fade-right">
+              <div class="timeline-marker sem2"></div>
+              <div class="timeline-content">
+                <h3>Semester 2</h3>
+                <h4>Backend Integration</h4>
+                <p>APIs, Auth, Databases, Maps</p>
+                <div class="timeline-tags">
+                  <span>Supabase</span><span>REST</span><span>Mapbox</span>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item fragment fade-right">
+              <div class="timeline-marker sem3"></div>
+              <div class="timeline-content">
+                <h3>Semester 3</h3>
+                <h4>Advanced Topics</h4>
+                <p>ML/AI, Clean Architecture, Deployment</p>
+                <div class="timeline-tags">
+                  <span>TensorFlow</span><span>CI/CD</span
+                  ><span>App Store</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            <strong>Time: 2 minutes</strong><br />
+            Emphasize the progressive learning path. Each semester builds on the
+            previous one. By the end, students will have production-ready
+            skills.
+          </aside>
+        </section>
+
+        <!-- SLIDE 4: Semester 1 - Foundations -->
+        <section data-transition="slide">
+          <h2 class="section-title semester-1">
+            <i data-lucide="box"></i> Semester 1: Foundations
+          </h2>
+          <p class="section-subtitle">
+            Building Beautiful, Responsive UIs with Solid Architecture
+          </p>
+          <div class="week-grid">
+            <div class="week-card fragment fade-up">
+              <div class="week-number">Week 1-3</div>
+              <h4>Flutter Fundamentals</h4>
+              <ul>
+                <li>Dart Language & Null Safety</li>
+                <li>Widget Tree & Composition</li>
+                <li>Stateless vs Stateful</li>
+              </ul>
+            </div>
+            <div class="week-card fragment fade-up">
+              <div class="week-number">Week 4-6</div>
+              <h4>Layout & Responsive Design</h4>
+              <ul>
+                <li>Column, Row, Stack</li>
+                <li>MediaQuery & LayoutBuilder</li>
+                <li>Adaptive UIs</li>
+              </ul>
+            </div>
+            <div class="week-card fragment fade-up">
+              <div class="week-number">Week 7-9</div>
+              <h4>Advanced UI Components</h4>
+              <ul>
+                <li>ListView & GridView</li>
+                <li>Navigation & Routing</li>
+                <li>Forms & Animations</li>
+              </ul>
+            </div>
+            <div class="week-card fragment fade-up">
+              <div class="week-number">Week 10-18</div>
+              <h4>State Management & Testing</h4>
+              <ul>
+                <li>Provider & Riverpod</li>
+                <li>Unit & Widget Testing</li>
+                <li>Individual Project</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            <strong>Time: 2 minutes</strong><br />
+            Focus on the hands-on nature: 2 hours lab + 1 hour lecture. Students
+            build a complete app by end of semester.
+          </aside>
+        </section>
+
+        <!-- SLIDE 5: Semester 1 - Code Sample -->
+        <section data-transition="fade">
+          <h2 class="section-title semester-1">
+            <i data-lucide="code"></i> Semester 1: What You'll Build
+          </h2>
+          <div class="code-demo">
+            <pre><code class="language-dart">// Riverpod State Management
+final todoListProvider = StateNotifierProvider&lt;TodoNotifier, List&lt;Todo&gt;&gt;((ref) {
+  return TodoNotifier();
+});
+
+class TodoNotifier extends StateNotifier&lt;List&lt;Todo&gt;&gt; {
+  TodoNotifier() : super([]);
+  
+  void addTodo(String title) {
+    state = [...state, Todo(title: title)];
+  }
+}</code></pre>
+          </div>
+          <div class="app-preview fragment fade-up">
+            <div class="phone-mockup">
+              <div class="phone-screen">
+                <div class="app-header">Todo App</div>
+                <div class="todo-item">Learn Flutter Basics</div>
+                <div class="todo-item">Build Responsive UI</div>
+                <div class="todo-item">Master Riverpod</div>
+              </div>
+            </div>
+            <p class="caption">
+              Individual Project: Full CRUD Todo App with Tests
+            </p>
+          </div>
+          <aside class="notes">
+            <strong>Time: 1-2 minutes</strong><br />
+            Show how clean and readable Dart code is. Mention the 70% test
+            coverage requirement.
+          </aside>
+        </section>
+
+        <!-- SLIDE 6: Semester 2 - Backend Integration -->
+        <section data-transition="slide">
+          <h2 class="section-title semester-2">
+            <i data-lucide="server"></i> Semester 2: Backend Integration
+          </h2>
+          <p class="section-subtitle">
+            APIs, Authentication, Databases & Location Services
+          </p>
+          <div class="week-grid">
+            <div class="week-card fragment fade-up">
+              <div class="week-number">Week 1-3</div>
+              <h4>HTTP & REST APIs</h4>
+              <ul>
+                <li>HTTP Methods & Status Codes</li>
+                <li>JSON Serialization</li>
+                <li>Dio & Error Handling</li>
+              </ul>
+            </div>
+            <div class="week-card fragment fade-up">
+              <div class="week-number">Week 4-6</div>
+              <h4>Supabase Fundamentals</h4>
+              <ul>
+                <li>PostgreSQL in the Cloud</li>
+                <li>CRUD Operations</li>
+                <li>Row Level Security</li>
+              </ul>
+            </div>
+            <div class="week-card fragment fade-up">
+              <div class="week-number">Week 7-9</div>
+              <h4>Authentication</h4>
+              <ul>
+                <li>Email/Password & OAuth</li>
+                <li>Protected Routes</li>
+                <li>User Profiles</li>
+              </ul>
+            </div>
+            <div class="week-card fragment fade-up">
+              <div class="week-number">Week 10-18</div>
+              <h4>Storage, Maps & Project</h4>
+              <ul>
+                <li>File Uploads & Real-time</li>
+                <li>Mapbox Integration</li>
+                <li>Group Project</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            <strong>Time: 2 minutes</strong><br />
+            Emphasize real-world skills: every modern app needs backend
+            integration. Group project simulates real team development.
+          </aside>
+        </section>
+
+        <!-- SLIDE 7: Backend Integration Flow -->
+        <section data-transition="fade">
+          <h2 class="section-title semester-2">
+            <i data-lucide="git-branch"></i> Backend Architecture
+          </h2>
+          <div class="architecture-diagram">
+            <div class="arch-layer fragment fade-up">
+              <div class="arch-box app">
+                <i data-lucide="smartphone"></i>
+                <span>Flutter App</span>
+              </div>
+            </div>
+            <div class="arch-arrow fragment fade-up">&#8595;</div>
+            <div class="arch-layer fragment fade-up">
+              <div class="arch-box api">
+                <i data-lucide="cloud"></i>
+                <span>REST API / Supabase</span>
+              </div>
+            </div>
+            <div class="arch-arrow fragment fade-up">&#8595;</div>
+            <div class="arch-layer fragment fade-up">
+              <div class="arch-box db">
+                <i data-lucide="database"></i>
+                <span>PostgreSQL Database</span>
+              </div>
+              <div class="arch-box storage">
+                <i data-lucide="hard-drive"></i>
+                <span>File Storage</span>
+              </div>
+              <div class="arch-box auth">
+                <i data-lucide="shield"></i>
+                <span>Authentication</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-examples fragment fade-in">
+            <p>
+              <strong>Group Project Ideas:</strong> Food Delivery • Event
+              Platform • Ride-Sharing • Real Estate Finder
+            </p>
+          </div>
+          <aside class="notes">
+            <strong>Time: 1-2 minutes</strong><br />
+            Walk through the data flow. Explain how Supabase provides all
+            backend services in one platform.
+          </aside>
+        </section>
+
+        <!-- SLIDE 8: Semester 3 - Advanced Topics -->
+        <section data-transition="slide">
+          <h2 class="section-title semester-3">
+            <i data-lucide="brain"></i> Semester 3: Advanced Topics
+          </h2>
+          <p class="section-subtitle">
+            ML/AI, Architecture Patterns, CI/CD & Deployment
+          </p>
+          <div class="week-grid">
+            <div class="week-card fragment fade-up">
+              <div class="week-number">Week 1-3</div>
+              <h4>Clean Architecture</h4>
+              <ul>
+                <li>SOLID Principles</li>
+                <li>Repository Pattern</li>
+                <li>Use Cases & DI</li>
+              </ul>
+            </div>
+            <div class="week-card fragment fade-up">
+              <div class="week-number">Week 4-9</div>
+              <h4>Machine Learning</h4>
+              <ul>
+                <li>TensorFlow Lite</li>
+                <li>Image Recognition</li>
+                <li>Google ML Kit & OCR</li>
+              </ul>
+            </div>
+            <div class="week-card fragment fade-up">
+              <div class="week-number">Week 10-12</div>
+              <h4>AI Integration</h4>
+              <ul>
+                <li>LLM APIs (OpenAI)</li>
+                <li>Chat Interfaces</li>
+                <li>Prompt Engineering</li>
+              </ul>
+            </div>
+            <div class="week-card fragment fade-up">
+              <div class="week-number">Week 13-18</div>
+              <h4>DevOps & Capstone</h4>
+              <ul>
+                <li>GitHub Actions CI/CD</li>
+                <li>App Store Deployment</li>
+                <li>Production App</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            <strong>Time: 2 minutes</strong><br />
+            This is where students become professional developers. AI/ML skills
+            are highly sought after in the job market.
+          </aside>
+        </section>
+
+        <!-- SLIDE 9: Clean Architecture Diagram -->
+        <section data-transition="fade">
+          <h2 class="section-title semester-3">
+            <i data-lucide="layers"></i> Clean Architecture
+          </h2>
+          <div class="clean-arch-diagram">
+            <div class="arch-circle outer fragment fade-up">
+              <span class="layer-label">Data Layer</span>
+              <div class="arch-circle middle fragment fade-up">
+                <span class="layer-label">Domain Layer</span>
+                <div class="arch-circle inner fragment fade-up">
+                  <span class="layer-label">Presentation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="arch-benefits fragment fade-in">
+            <div class="benefit">
+              <i data-lucide="check-circle"></i> Testable
+            </div>
+            <div class="benefit">
+              <i data-lucide="check-circle"></i> Maintainable
+            </div>
+            <div class="benefit">
+              <i data-lucide="check-circle"></i> Scalable
+            </div>
+            <div class="benefit">
+              <i data-lucide="check-circle"></i> Independent
+            </div>
+          </div>
+          <aside class="notes">
+            <strong>Time: 1-2 minutes</strong><br />
+            Explain the dependency rule: inner layers don't know about outer
+            layers. This makes code highly testable.
+          </aside>
+        </section>
+
+        <!-- SLIDE 10: CI/CD Pipeline -->
+        <section data-transition="fade">
+          <h2 class="section-title semester-3">
+            <i data-lucide="git-merge"></i> CI/CD Pipeline
+          </h2>
+          <div class="pipeline-diagram">
+            <div class="pipeline-step fragment fade-right">
+              <div class="step-icon"><i data-lucide="git-commit"></i></div>
+              <span>Push Code</span>
+            </div>
+            <div class="pipeline-arrow fragment fade-right">&#8594;</div>
+            <div class="pipeline-step fragment fade-right">
+              <div class="step-icon"><i data-lucide="play-circle"></i></div>
+              <span>Run Tests</span>
+            </div>
+            <div class="pipeline-arrow fragment fade-right">&#8594;</div>
+            <div class="pipeline-step fragment fade-right">
+              <div class="step-icon"><i data-lucide="package"></i></div>
+              <span>Build App</span>
+            </div>
+            <div class="pipeline-arrow fragment fade-right">&#8594;</div>
+            <div class="pipeline-step fragment fade-right">
+              <div class="step-icon"><i data-lucide="upload-cloud"></i></div>
+              <span>Deploy</span>
+            </div>
+          </div>
+          <div class="deploy-targets fragment fade-up">
+            <div class="target">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                alt="Google Play"
+                class="store-badge"
+              />
+            </div>
+            <div class="target">
+              <img
+                src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                alt="App Store"
+                class="store-badge"
+              />
+            </div>
+          </div>
+          <aside class="notes">
+            <strong>Time: 1-2 minutes</strong><br />
+            Automated pipelines save time and reduce errors. Students will
+            deploy real apps to app stores.
+          </aside>
+        </section>
+
+        <!-- SLIDE 11: Learning Outcomes -->
+        <section data-transition="slide">
+          <h2 class="section-title">
+            <i data-lucide="target"></i> Learning Outcomes
+          </h2>
+          <div class="outcomes-grid">
+            <div class="outcome-card fragment fade-up">
+              <div class="outcome-number">1</div>
+              <p>Design & develop cross-platform mobile applications</p>
+            </div>
+            <div class="outcome-card fragment fade-up">
+              <div class="outcome-number">2</div>
+              <p>Implement responsive, accessible user interfaces</p>
+            </div>
+            <div class="outcome-card fragment fade-up">
+              <div class="outcome-number">3</div>
+              <p>Apply state management with Provider & Riverpod</p>
+            </div>
+            <div class="outcome-card fragment fade-up">
+              <div class="outcome-number">4</div>
+              <p>Integrate backend services, APIs & authentication</p>
+            </div>
+            <div class="outcome-card fragment fade-up">
+              <div class="outcome-number">5</div>
+              <p>Incorporate location services & mapping</p>
+            </div>
+            <div class="outcome-card fragment fade-up">
+              <div class="outcome-number">6</div>
+              <p>Implement ML/AI features in mobile apps</p>
+            </div>
+            <div class="outcome-card fragment fade-up">
+              <div class="outcome-number">7</div>
+              <p>Apply clean architecture & design patterns</p>
+            </div>
+            <div class="outcome-card fragment fade-up">
+              <div class="outcome-number">8</div>
+              <p>Utilize version control, testing & CI/CD</p>
+            </div>
+            <div class="outcome-card fragment fade-up">
+              <div class="outcome-number">9</div>
+              <p>Deploy production-ready apps to stores</p>
+            </div>
+            <div class="outcome-card fragment fade-up">
+              <div class="outcome-number">10</div>
+              <p>Collaborate effectively in development teams</p>
+            </div>
+          </div>
+          <aside class="notes">
+            <strong>Time: 1-2 minutes</strong><br />
+            These outcomes align with industry requirements. Students will be
+            job-ready upon completion.
+          </aside>
+        </section>
+
+        <!-- SLIDE 12: Tools & Technologies -->
+        <section data-transition="slide">
+          <h2 class="section-title">
+            <i data-lucide="wrench"></i> Tools & Technologies
+          </h2>
+          <div class="tech-grid">
+            <div class="tech-item fragment fade-up">
+              <img
+                src="https://storage.googleapis.com/cms-storage-bucket/6e19fee6b47b36ca613f.png"
+                alt="Flutter"
+              />
+              <span>Flutter</span>
+            </div>
+            <div class="tech-item fragment fade-up">
+              <img
+                src="https://dart.dev/assets/img/logo/logo-white-text.svg"
+                alt="Dart"
+              />
+              <span>Dart</span>
+            </div>
+            <div class="tech-item fragment fade-up">
+              <div class="tech-icon"><i data-lucide="git-branch"></i></div>
+              <span>Git & GitHub</span>
+            </div>
+            <div class="tech-item fragment fade-up">
+              <img
+                src="https://supabase.com/dashboard/img/supabase-logo.svg"
+                alt="Supabase"
+              />
+              <span>Supabase</span>
+            </div>
+            <div class="tech-item fragment fade-up">
+              <div class="tech-icon"><i data-lucide="map-pin"></i></div>
+              <span>Mapbox</span>
+            </div>
+            <div class="tech-item fragment fade-up">
+              <div class="tech-icon"><i data-lucide="brain"></i></div>
+              <span>TensorFlow Lite</span>
+            </div>
+            <div class="tech-item fragment fade-up">
+              <div class="tech-icon"><i data-lucide="bot"></i></div>
+              <span>OpenAI API</span>
+            </div>
+            <div class="tech-item fragment fade-up">
+              <div class="tech-icon"><i data-lucide="flame"></i></div>
+              <span>Firebase</span>
+            </div>
+          </div>
+          <aside class="notes">
+            <strong>Time: 1 minute</strong><br />
+            All these tools are industry-standard and used by professional
+            developers worldwide.
+          </aside>
+        </section>
+
+        <!-- SLIDE 13: Assessment Structure -->
+        <section data-transition="slide">
+          <h2 class="section-title">
+            <i data-lucide="clipboard-check"></i> Assessment Structure
+          </h2>
+          <div class="assessment-container">
+            <div class="assessment-card fragment fade-up">
+              <h3>Semester 1</h3>
+              <div class="chart-container">
+                <div class="bar-chart">
+                  <div class="bar" style="--height: 40%">
+                    <span>40%</span><label>Project</label>
+                  </div>
+                  <div class="bar" style="--height: 20%">
+                    <span>20%</span><label>Labs</label>
+                  </div>
+                  <div class="bar" style="--height: 15%">
+                    <span>15%</span><label>Quizzes</label>
+                  </div>
+                  <div class="bar" style="--height: 15%">
+                    <span>15%</span><label>Final</label>
+                  </div>
+                  <div class="bar" style="--height: 10%">
+                    <span>10%</span><label>Git</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="assessment-card fragment fade-up">
+              <h3>Semester 2</h3>
+              <div class="chart-container">
+                <div class="bar-chart">
+                  <div class="bar" style="--height: 40%">
+                    <span>40%</span><label>Group Project</label>
+                  </div>
+                  <div class="bar" style="--height: 20%">
+                    <span>20%</span><label>Labs</label>
+                  </div>
+                  <div class="bar" style="--height: 15%">
+                    <span>15%</span><label>Quizzes</label>
+                  </div>
+                  <div class="bar" style="--height: 15%">
+                    <span>15%</span><label>Final</label>
+                  </div>
+                  <div class="bar" style="--height: 10%">
+                    <span>10%</span><label>Git</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="assessment-card fragment fade-up">
+              <h3>Semester 3</h3>
+              <div class="chart-container">
+                <div class="bar-chart">
+                  <div class="bar" style="--height: 50%">
+                    <span>50%</span><label>Capstone</label>
+                  </div>
+                  <div class="bar" style="--height: 15%">
+                    <span>15%</span><label>Labs</label>
+                  </div>
+                  <div class="bar" style="--height: 15%">
+                    <span>15%</span><label>Present</label>
+                  </div>
+                  <div class="bar" style="--height: 10%">
+                    <span>10%</span><label>Docs</label>
+                  </div>
+                  <div class="bar" style="--height: 10%">
+                    <span>10%</span><label>Quiz</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            <strong>Time: 1-2 minutes</strong><br />
+            Emphasize the practical focus: projects make up the largest portion
+            of grades. Labs are hands-on every week.
+          </aside>
+        </section>
+
+        <!-- SLIDE 14: Real-World Applications -->
+        <section data-transition="slide">
+          <h2 class="section-title">
+            <i data-lucide="smartphone"></i> What You'll Build
+          </h2>
+          <div class="apps-showcase">
+            <div class="app-card fragment fade-up">
+              <div class="app-icon"><i data-lucide="check-square"></i></div>
+              <h4>Todo App</h4>
+              <p>CRUD operations, state management, testing</p>
+              <span class="semester-tag">Semester 1</span>
+            </div>
+            <div class="app-card fragment fade-up">
+              <div class="app-icon"><i data-lucide="cloud-sun"></i></div>
+              <h4>Weather App</h4>
+              <p>REST APIs, async data, error handling</p>
+              <span class="semester-tag">Semester 2</span>
+            </div>
+            <div class="app-card fragment fade-up">
+              <div class="app-icon"><i data-lucide="map-pin"></i></div>
+              <h4>Location-Based App</h4>
+              <p>Maps, geolocation, real-time features</p>
+              <span class="semester-tag">Semester 2</span>
+            </div>
+            <div class="app-card fragment fade-up">
+              <div class="app-icon"><i data-lucide="scan"></i></div>
+              <h4>AI Scanner</h4>
+              <p>Image recognition, OCR, ML models</p>
+              <span class="semester-tag">Semester 3</span>
+            </div>
+            <div class="app-card fragment fade-up">
+              <div class="app-icon"><i data-lucide="message-circle"></i></div>
+              <h4>AI Assistant</h4>
+              <p>LLM integration, chat UI, prompts</p>
+              <span class="semester-tag">Semester 3</span>
+            </div>
+            <div class="app-card fragment fade-up">
+              <div class="app-icon"><i data-lucide="rocket"></i></div>
+              <h4>Capstone Project</h4>
+              <p>Production-ready, app store deployment</p>
+              <span class="semester-tag">Semester 3</span>
+            </div>
+          </div>
+          <aside class="notes">
+            <strong>Time: 1-2 minutes</strong><br />
+            Each project builds on previous skills. By the end, students have a
+            portfolio of 6+ apps.
+          </aside>
+        </section>
+
+        <!-- SLIDE 15: Career Pathways -->
+        <section data-transition="slide">
+          <h2 class="section-title">
+            <i data-lucide="trending-up"></i> Career Pathways
+          </h2>
+          <div class="career-path">
+            <div class="career-node start fragment fade-up">
+              <div class="node-icon"><i data-lucide="graduation-cap"></i></div>
+              <h4>Graduate</h4>
+              <p>Course Completion</p>
+            </div>
+            <div class="career-arrow fragment fade-up">&#8594;</div>
+            <div class="career-node fragment fade-up">
+              <div class="node-icon"><i data-lucide="code"></i></div>
+              <h4>Junior Developer</h4>
+              <p>$50K - $70K</p>
+            </div>
+            <div class="career-arrow fragment fade-up">&#8594;</div>
+            <div class="career-node fragment fade-up">
+              <div class="node-icon"><i data-lucide="user-check"></i></div>
+              <h4>Senior Developer</h4>
+              <p>$80K - $120K</p>
+            </div>
+            <div class="career-arrow fragment fade-up">&#8594;</div>
+            <div class="career-node end fragment fade-up">
+              <div class="node-icon"><i data-lucide="users"></i></div>
+              <h4>Tech Lead</h4>
+              <p>$120K+</p>
+            </div>
+          </div>
+          <div class="job-stats fragment fade-in">
+            <div class="stat">
+              <span class="stat-number">50K+</span>
+              <span class="stat-label">Flutter Jobs Worldwide</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">39%</span>
+              <span class="stat-label">YoY Growth in Demand</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">Top 10</span>
+              <span class="stat-label">Most Loved Framework</span>
+            </div>
+          </div>
+          <aside class="notes">
+            <strong>Time: 1-2 minutes</strong><br />
+            Flutter developers are in high demand. Salary figures are USD and
+            vary by region. Emphasize the growth trajectory.
+          </aside>
+        </section>
+
+        <!-- SLIDE 16: Hands-On Focus -->
+        <section data-transition="slide">
+          <h2 class="section-title">
+            <i data-lucide="hand"></i> Hands-On Learning
+          </h2>
+          <div class="hands-on-grid">
+            <div class="hands-on-item fragment fade-up">
+              <div class="time-block">
+                <span class="hours">2</span>
+                <span class="label">Hours</span>
+              </div>
+              <h4>Lab Sessions</h4>
+              <p>Practical coding exercises every week</p>
+            </div>
+            <div class="hands-on-item fragment fade-up">
+              <div class="time-block">
+                <span class="hours">1</span>
+                <span class="label">Hour</span>
+              </div>
+              <h4>Lecture</h4>
+              <p>Concepts, theory, and demonstrations</p>
+            </div>
+            <div class="hands-on-item fragment fade-up">
+              <div class="time-block">
+                <span class="hours">3</span>
+                <span class="label">Projects</span>
+              </div>
+              <h4>Major Projects</h4>
+              <p>Portfolio-building applications</p>
+            </div>
+          </div>
+          <div class="learning-approach fragment fade-in">
+            <p>
+              <strong>Learn by Doing:</strong> 70% hands-on coding, 30% theory
+            </p>
+          </div>
+          <aside class="notes">
+            <strong>Time: 1 minute</strong><br />
+            Emphasize the practical nature. Students learn best by building real
+            applications.
+          </aside>
+        </section>
+
+        <!-- SLIDE 17: Prerequisites -->
+        <section data-transition="slide">
+          <h2 class="section-title">
+            <i data-lucide="check-circle"></i> Prerequisites
+          </h2>
+          <div class="prereq-container">
+            <div class="prereq-card fragment fade-up">
+              <div class="prereq-icon"><i data-lucide="code-2"></i></div>
+              <h4>JavaScript Programming</h4>
+              <p>Basic understanding of programming concepts</p>
+            </div>
+            <div class="prereq-card fragment fade-up">
+              <div class="prereq-icon"><i data-lucide="box"></i></div>
+              <h4>Object-Oriented Programming</h4>
+              <p>Classes, objects, inheritance concepts</p>
+            </div>
+            <div class="prereq-card fragment fade-up">
+              <div class="prereq-icon"><i data-lucide="laptop"></i></div>
+              <h4>Computer Access</h4>
+              <p>8GB+ RAM, SSD recommended</p>
+            </div>
+          </div>
+          <div class="no-prereq fragment fade-in">
+            <p>
+              <i data-lucide="info"></i>
+              <strong>No prior Flutter or Dart experience required!</strong>
+            </p>
+          </div>
+          <aside class="notes">
+            <strong>Time: 1 minute</strong><br />
+            Reassure students that they don't need Flutter experience. The
+            course starts from basics.
+          </aside>
+        </section>
+
+        <!-- SLIDE 18: Capstone Project -->
+        <section data-transition="slide">
+          <h2 class="section-title">
+            <i data-lucide="trophy"></i> Capstone Project
+          </h2>
+          <p class="section-subtitle">Your Production-Ready Masterpiece</p>
+          <div class="capstone-requirements">
+            <div class="req-column fragment fade-up">
+              <h4>Mandatory Features</h4>
+              <ul>
+                <li><i data-lucide="check"></i> Clean Architecture</li>
+                <li><i data-lucide="check"></i> Supabase Backend</li>
+                <li><i data-lucide="check"></i> ML/AI Feature</li>
+                <li><i data-lucide="check"></i> Professional UI/UX</li>
+                <li><i data-lucide="check"></i> Comprehensive Testing</li>
+                <li><i data-lucide="check"></i> CI/CD Pipeline</li>
+                <li><i data-lucide="check"></i> App Store Ready</li>
+              </ul>
+            </div>
+            <div class="req-column fragment fade-up">
+              <h4>Project Ideas</h4>
+              <ul>
+                <li><i data-lucide="brain"></i> AI Study Planner</li>
+                <li>
+                  <i data-lucide="heart-pulse"></i> Health Diagnosis Assistant
+                </li>
+                <li><i data-lucide="package"></i> Smart Inventory System</li>
+                <li><i data-lucide="newspaper"></i> AI News Aggregator</li>
+                <li><i data-lucide="dumbbell"></i> Fitness Coach with ML</li>
+                <li><i data-lucide="utensils"></i> Recipe App with AI</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            <strong>Time: 2 minutes</strong><br />
+            The capstone is worth 50% of Semester 3 grade. Students work in
+            teams and deploy to real app stores.
+          </aside>
+        </section>
+
+        <!-- SLIDE 19: Resources -->
+        <section data-transition="slide">
+          <h2 class="section-title">
+            <i data-lucide="book-open"></i> Resources & Support
+          </h2>
+          <div class="resources-grid">
+            <div class="resource-card fragment fade-up">
+              <h4><i data-lucide="file-text"></i> Official Docs</h4>
+              <ul>
+                <li>Flutter Documentation</li>
+                <li>Dart Language Tour</li>
+                <li>Riverpod Docs</li>
+                <li>Supabase Docs</li>
+              </ul>
+            </div>
+            <div class="resource-card fragment fade-up">
+              <h4><i data-lucide="youtube"></i> Learning</h4>
+              <ul>
+                <li>Flutter YouTube Channel</li>
+                <li>Reso Coder Tutorials</li>
+                <li>FilledStacks Architecture</li>
+                <li>Flutter Community Medium</li>
+              </ul>
+            </div>
+            <div class="resource-card fragment fade-up">
+              <h4><i data-lucide="users"></i> Community</h4>
+              <ul>
+                <li>Flutter Discord</li>
+                <li>r/FlutterDev Reddit</li>
+                <li>GitHub Discussions</li>
+                <li>Stack Overflow</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            <strong>Time: 1 minute</strong><br />
+            Encourage students to join the Flutter community. It's one of the
+            most welcoming developer communities.
+          </aside>
+        </section>
+
+        <!-- SLIDE 20: Call to Action -->
+        <section data-transition="zoom" class="cta-slide">
+          <div class="cta-content">
+            <h1 class="cta-title">Build the Future of Mobile</h1>
+            <p class="cta-subtitle">
+              Transform from beginner to professional Flutter developer in 3
+              semesters
+            </p>
+            <div class="cta-highlights">
+              <div class="highlight fragment fade-up">
+                <i data-lucide="code-2"></i>
+                <span>One Codebase</span>
+              </div>
+              <div class="highlight fragment fade-up">
+                <i data-lucide="smartphone"></i>
+                <span>Multiple Platforms</span>
+              </div>
+              <div class="highlight fragment fade-up">
+                <i data-lucide="briefcase"></i>
+                <span>Career Ready</span>
+              </div>
+            </div>
+            <div class="cta-action fragment zoom-in">
+              <p class="enroll-text">Ready to start your journey?</p>
+              <div class="flutter-bird">
+                <img
+                  src="https://storage.googleapis.com/cms-storage-bucket/6e19fee6b47b36ca613f.png"
+                  alt="Flutter"
+                />
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            <strong>Time: 1-2 minutes</strong><br />
+            End with enthusiasm! Encourage questions. Remind students of the
+            practical skills and career opportunities.
+          </aside>
+        </section>
+
+        <!-- SLIDE 21: Q&A -->
+        <section data-transition="fade" class="qa-slide">
+          <h1 class="qa-title">Questions?</h1>
+          <div class="contact-info">
+            <p><i data-lucide="mail"></i> Instructor Email</p>
+            <p><i data-lucide="clock"></i> Office Hours Available</p>
+            <p>
+              <i data-lucide="message-circle"></i> Consultation by Appointment
+            </p>
+          </div>
+          <div class="thank-you fragment fade-in">
+            <p>Thank you for your attention!</p>
+            <div class="social-links">
+              <span><i data-lucide="globe"></i> flutter.dev</span>
+              <span><i data-lucide="github"></i> github.com/flutter</span>
+            </div>
+          </div>
+          <aside class="notes">
+            <strong>Time: 5+ minutes for Q&A</strong><br />
+            Open floor for questions. Be prepared to discuss prerequisites,
+            workload, and career prospects.
+          </aside>
+        </section>
+      </div>
+    </div>
+
+    <!-- Reveal.js -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/highlight.js"></script>
+
+    <!-- Prism.js for Dart syntax -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-dart.min.js"></script>
+
+    <script>
+      // Initialize Reveal.js
+      Reveal.initialize({
+        hash: true,
+        slideNumber: 'c/t',
+        transition: 'slide',
+        transitionSpeed: 'default',
+        progress: true,
+        controls: true,
+        controlsTutorial: true,
+        controlsLayout: 'bottom-right',
+        controlsBackArrows: 'faded',
+        keyboard: true,
+        overview: true,
+        center: true,
+        touch: true,
+        loop: false,
+        rtl: false,
+        shuffle: false,
+        fragments: true,
+        fragmentInURL: true,
+        embedded: false,
+        help: true,
+        showNotes: false,
+        autoPlayMedia: null,
+        preloadIframes: null,
+        autoSlide: 0,
+        autoSlideStoppable: true,
+        autoSlideMethod: null,
+        defaultTiming: null,
+        mouseWheel: false,
+        display: 'block',
+        hideInactiveCursor: true,
+        hideCursorTime: 5000,
+        plugins: [RevealNotes, RevealHighlight],
+      });
+
+      // Initialize Lucide icons
+      lucide.createIcons();
+
+      // Theme toggle functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      const body = document.body;
+
+      // Check for saved theme preference
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      body.setAttribute('data-theme', savedTheme);
+
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+
+      // Re-initialize icons after slide change
+      Reveal.on('slidechanged', () => {
+        lucide.createIcons();
+      });
+
+      // Re-initialize icons after fragments
+      Reveal.on('fragmentshown', () => {
+        lucide.createIcons();
+      });
+    </script>
+  </body>
+</html>
