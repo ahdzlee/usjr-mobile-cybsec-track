@@ -230,3 +230,289 @@ body::after {
     border-radius: 8px !important;
     box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
 }
+
+/* ============================================
+   Cyber Logo Animation
+   ============================================ */
+
+.cyber-logo-container {
+    margin-bottom: 20px;
+}
+
+.cyber-logo {
+    width: 80px !important;
+    height: 80px !important;
+    color: var(--primary);
+    filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.5));
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { 
+        filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.5));
+        transform: scale(1);
+    }
+    50% { 
+        filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.8));
+        transform: scale(1.05);
+    }
+}
+
+/* ============================================
+   Semester-Specific Colors
+   ============================================ */
+
+.section-title.semester-1 {
+    color: #ef4444 !important; /* Red for Offense */
+    border-left-color: #ef4444;
+}
+
+.section-title.semester-2 {
+    color: #10b981 !important; /* Green for Defense */
+    border-left-color: #10b981;
+}
+
+.section-title.semester-3 {
+    color: #8b5cf6 !important; /* Purple for Architecture */
+    border-left-color: #8b5cf6;
+}
+
+/* Timeline marker colors for cybsec */
+.timeline-marker.sem1 { 
+    background: #ef4444 !important; 
+    box-shadow: 0 0 0 4px #ef4444 !important; 
+}
+.timeline-marker.sem2 { 
+    background: #10b981 !important; 
+    box-shadow: 0 0 0 4px #10b981 !important; 
+}
+.timeline-marker.sem3 { 
+    background: #8b5cf6 !important; 
+    box-shadow: 0 0 0 4px #8b5cf6 !important; 
+}
+
+/* Cybsec timeline gradient */
+.timeline::before {
+    background: linear-gradient(180deg, #ef4444 0%, #10b981 50%, #8b5cf6 100%) !important;
+}
+
+/* ============================================
+   Certification Details
+   ============================================ */
+
+.cert-details {
+    text-align: left;
+}
+
+.cert-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cert-details li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.7em;
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+.cert-details li i {
+    width: 16px;
+    height: 16px;
+    color: #10b981;
+    flex-shrink: 0;
+}
+
+.assessment-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}
+
+.assessment-card h3 i {
+    width: 20px;
+    height: 20px;
+}
+
+/* ============================================
+   Q&A Slide Enhancements
+   ============================================ */
+
+.qa-slide {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.qa-title {
+    font-size: 3em !important;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5em;
+}
+
+.qa-content {
+    margin-bottom: 2em;
+}
+
+.thank-you {
+    margin-top: 1em;
+}
+
+.thank-you p {
+    font-size: 1.2em;
+    color: var(--text);
+}
+
+/* ============================================
+   Week Card Icon Styling
+   ============================================ */
+
+.week-card h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+}
+
+.week-card h4 i {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   Hands-on Grid Icons
+   ============================================ */
+
+.hands-on-item .time-block .hours i {
+    width: 48px;
+    height: 48px;
+    color: var(--primary);
+}
+
+.learning-approach {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.learning-approach i {
+    width: 24px;
+    height: 24px;
+}
+
+/* ============================================
+   Outcomes Grid - 5 columns for cybsec
+   ============================================ */
+
+.outcomes-grid {
+    grid-template-columns: repeat(5, 1fr) !important;
+}
+
+@media (max-width: 1200px) {
+    .outcomes-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .outcomes-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* ============================================
+   Apps Showcase - 3x2 grid for capstones
+   ============================================ */
+
+.apps-showcase {
+    grid-template-columns: repeat(3, 1fr) !important;
+}
+
+@media (max-width: 1200px) {
+    .apps-showcase {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* ============================================
+   Requirement Column Enhancements
+   ============================================ */
+
+.req-column h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.req-column h4 i {
+    width: 20px;
+    height: 20px;
+}
+
+.req-column li i[data-lucide="x"] {
+    color: #ef4444 !important;
+}
+
+/* ============================================
+   Hover Effects & Transitions
+   ============================================ */
+
+.feature-card:hover .feature-icon,
+.app-card:hover .app-icon,
+.tech-item:hover .tech-icon {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+}
+
+.feature-icon, .app-icon, .tech-icon {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ============================================
+   Dark Theme Accent Adjustments
+   ============================================ */
+
+[data-theme="dark"] .section-title.semester-1 {
+    color: #f87171 !important;
+    border-left-color: #f87171;
+}
+
+[data-theme="dark"] .section-title.semester-2 {
+    color: #34d399 !important;
+    border-left-color: #34d399;
+}
+
+[data-theme="dark"] .section-title.semester-3 {
+    color: #a78bfa !important;
+    border-left-color: #a78bfa;
+}
+
+[data-theme="dark"] .timeline-marker.sem1 { 
+    background: #f87171 !important; 
+    box-shadow: 0 0 0 4px #f87171 !important; 
+}
+
+[data-theme="dark"] .timeline-marker.sem2 { 
+    background: #34d399 !important; 
+    box-shadow: 0 0 0 4px #34d399 !important; 
+}
+
+[data-theme="dark"] .timeline-marker.sem3 { 
+    background: #a78bfa !important; 
+    box-shadow: 0 0 0 4px #a78bfa !important; 
+}
+
+[data-theme="dark"] .timeline::before {
+    background: linear-gradient(180deg, #f87171 0%, #34d399 50%, #a78bfa 100%) !important;
+}
