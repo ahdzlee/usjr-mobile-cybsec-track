@@ -1012,6 +1012,14 @@ class TodoNotifier extends StateNotifier&lt;List&lt;Todo&gt;&gt; {
       </div>
     </div>
 
+    <!-- Slide Selector (Replaces default slide number) -->
+    <div class="slide-selector-container">
+      <select id="slide-selector" class="slide-selector">
+        <!-- Options populated by JS -->
+      </select>
+      <div class="selector-icon"><i data-lucide="chevron-up"></i></div>
+    </div>
+
     <!-- Reveal.js -->
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/notes/notes.js"></script>
@@ -1025,7 +1033,7 @@ class TodoNotifier extends StateNotifier&lt;List&lt;Todo&gt;&gt; {
       // Initialize Reveal.js
       Reveal.initialize({
         hash: true,
-        slideNumber: 'c/t',
+        slideNumber: false, // Disabled in favor of custom selector
         transition: 'slide',
         transitionSpeed: 'default',
         progress: true,
@@ -1084,6 +1092,46 @@ class TodoNotifier extends StateNotifier&lt;List&lt;Todo&gt;&gt; {
       // Re-initialize icons after fragments
       Reveal.on('fragmentshown', () => {
         lucide.createIcons();
+      });
+
+      // Slide Selector Logic
+      document.addEventListener('DOMContentLoaded', () => {
+        const selector = document.getElementById('slide-selector');
+        const slides = document.querySelectorAll('.slides > section');
+        
+        // Populate dropdown
+        slides.forEach((slide, index) => {
+          const option = document.createElement('option');
+          option.value = index;
+          
+          // Try to find a title
+          let title = `Slide ${index + 1}`;
+          const titleEl = slide.querySelector('h1, h2, .hero-title, .section-title');
+          if (titleEl) {
+            // clean up icon text
+            title = `${index + 1}. ${titleEl.innerText.trim()}`;
+          }
+          
+          option.text = title;
+          selector.appendChild(option);
+        });
+
+        // Update selector on change
+        selector.addEventListener('change', (e) => {
+          Reveal.slide(parseInt(e.target.value));
+          // Remove focus to allow keyboard navigation to work immediately
+          e.target.blur();
+        });
+
+        // Update selector when slide changes
+        Reveal.on('slidechanged', (event) => {
+          selector.value = event.indexh;
+        });
+        
+        // Set initial value
+        if (Reveal.getIndices()) {
+            selector.value = Reveal.getIndices().h;
+        }
       });
     </script>
   </body>

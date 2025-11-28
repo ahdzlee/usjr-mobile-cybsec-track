@@ -1513,3 +1513,66 @@
     .theme-toggle { display: none; }
     .reveal .slides section { page-break-after: always; }
 }
+
+/* ============================================
+   Slide Selector
+   ============================================ */
+
+.slide-selector-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    pointer-events: none; /* Allow clicks to pass through container */
+}
+
+.slide-selector {
+    appearance: none;
+    -webkit-appearance: none;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 36px 8px 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 8px var(--shadow);
+    transition: all 0.3s ease;
+    pointer-events: auto; /* Re-enable clicks for select */
+    min-width: 200px;
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.slide-selector:hover, .slide-selector:focus {
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px var(--shadow-lg);
+    outline: none;
+}
+
+.selector-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+}
+
+.selector-icon i {
+    width: 16px;
+    height: 16px;
+}
+
+@media print {
+    .slide-selector-container { display: none; }
+}
