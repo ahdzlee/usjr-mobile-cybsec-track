@@ -1,0 +1,196 @@
+/* ============================================
+   Cybersecurity Specialization Track - Theme
+   Style: Cyberwarfare / Tactical HUD
+   ============================================ */
+
+/* CSS Variables - Light Theme (Tactical Map) */
+:root, [data-theme="light"] {
+    --primary: #059669; /* Emerald 600 */
+    --secondary: #DC2626; /* Red 600 */
+    --accent: #D97706; /* Amber 600 */
+    --background: #F0FDF4; /* Mint Cream */
+    --background-gradient: 
+        linear-gradient(rgba(5, 150, 105, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(5, 150, 105, 0.03) 1px, transparent 1px);
+    --text: #064E3B;
+    --text-muted: #374151;
+    --surface: rgba(255, 255, 255, 0.9);
+    --surface-solid: #FFFFFF;
+    --surface-hover: #ECFDF5;
+    --code-bg: #F3F4F6;
+    --border: #059669;
+    --border-light: rgba(5, 150, 105, 0.3);
+    --gradient-start: #059669;
+    --gradient-end: #10B981;
+    --shadow: rgba(5, 150, 105, 0.1);
+    --shadow-lg: rgba(5, 150, 105, 0.2);
+    --glass-blur: 4px;
+    --glass-saturate: 100%;
+    --glass-border: 1px solid #059669;
+    --glass-inner-shadow: inset 0 0 10px rgba(5, 150, 105, 0.05);
+    --glass-outer-shadow: 2px 2px 0px rgba(5, 150, 105, 0.2);
+    --hero-text: #064E3B;
+    --hero-text-muted: #065F46;
+    --radius-sm: 2px;
+    --radius-md: 4px;
+    --radius-lg: 4px;
+    --radius-xl: 8px;
+    --radius-round: 2px;
+    --font-heading: 'JetBrains Mono', monospace;
+}
+
+/* CSS Variables - Dark Theme (Night Ops / Terminal) */
+[data-theme="dark"] {
+    --primary: #00FF41; /* Matrix Green */
+    --secondary: #FF0055; /* Cyber Red */
+    --accent: #FFFF00; /* Hazard Yellow */
+    --background: #000000;
+    --background-gradient: 
+        radial-gradient(circle at 50% 50%, rgba(0, 255, 65, 0.03) 0%, transparent 60%),
+        linear-gradient(0deg, rgba(0, 20, 0, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    --text: #E0E0E0;
+    --text-muted: #008F11;
+    --surface: rgba(0, 20, 0, 0.85);
+    --surface-solid: #001100;
+    --surface-hover: rgba(0, 40, 0, 0.9);
+    --code-bg: #0D1117;
+    --border: #00FF41;
+    --border-light: rgba(0, 255, 65, 0.4);
+    --gradient-start: #00FF41;
+    --gradient-end: #008F11;
+    --shadow: rgba(0, 255, 65, 0.2);
+    --shadow-lg: rgba(0, 255, 65, 0.4);
+    --glass-blur: 0px;
+    --glass-saturate: 100%;
+    --glass-border: 1px solid #00FF41;
+    --glass-inner-shadow: inset 0 0 20px rgba(0, 255, 65, 0.1);
+    --glass-outer-shadow: 0 0 10px rgba(0, 255, 65, 0.2), 0 0 2px #00FF41;
+    --hero-text: #00FF41;
+    --hero-text-muted: #00CC33;
+    --radius-sm: 0px;
+    --radius-md: 0px;
+    --radius-lg: 2px;
+    --radius-xl: 2px;
+    --radius-round: 0px;
+    --font-heading: 'JetBrains Mono', monospace;
+}
+
+/* Cyber Specific Decorative Elements */
+
+/* Tactical Grid Background */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 255, 65, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 65, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Scanline Effect for Dark Mode */
+[data-theme="dark"] body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 9999;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+/* Override Headers for Cyber Look */
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .section-title {
+    font-family: 'JetBrains Mono', monospace !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.section-title {
+    border-left: 4px solid var(--primary);
+    padding-left: 16px;
+}
+
+/* Hero Slide Tactical HUD */
+.hero-slide {
+    border: 1px solid var(--border);
+    background: 
+        linear-gradient(135deg, transparent 10px, var(--border) 10px, var(--border) 12px, transparent 12px),
+        linear-gradient(225deg, transparent 10px, var(--border) 10px, var(--border) 12px, transparent 12px),
+        linear-gradient(315deg, transparent 10px, var(--border) 10px, var(--border) 12px, transparent 12px),
+        linear-gradient(45deg, transparent 10px, var(--border) 10px, var(--border) 12px, transparent 12px);
+    background-position: top left, top right, bottom right, bottom left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+/* Glitch Text Effect on Hover */
+.hero-title:hover {
+    animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch {
+    2%, 64% { transform: translate(2px,0) skew(0deg); }
+    4%, 60% { transform: translate(-2px,0) skew(0deg); }
+    62% { transform: translate(0,0) skew(5deg); }
+}
+
+/* Card Overrides - Sharp Edges & HUD Borders */
+.feature-card, .hands-on-item, .prereq-card, .timeline-content, .week-card {
+    border-radius: var(--radius-md) !important;
+    border: 1px solid var(--border);
+    position: relative;
+}
+
+.feature-card::before, .hands-on-item::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid var(--primary);
+    border-left: 2px solid var(--primary);
+}
+
+.feature-card::after, .hands-on-item::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid var(--primary);
+    border-right: 2px solid var(--primary);
+}
+
+/* Badge Override */
+.badge {
+    border-radius: 4px !important;
+    border: 1px solid var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Buttons */
+.track-btn, button {
+    border-radius: 0px !important;
+    border: 1px solid var(--primary);
+    text-transform: uppercase;
+}
+
+.track-btn:hover {
+    box-shadow: 0 0 15px var(--primary);
+    text-shadow: 0 0 5px #fff;
+}
