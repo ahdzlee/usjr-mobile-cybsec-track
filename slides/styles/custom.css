@@ -1610,54 +1610,47 @@
     z-index: 1000;
     display: flex;
     align-items: center;
-    pointer-events: none; /* Allow clicks to pass through container */
-}
-
-.slide-selector {
-    appearance: none;
-    -webkit-appearance: none;
+    justify-content: center;
     background: var(--surface);
     backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
     -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-    color: var(--text);
     border: var(--glass-border);
-    border-radius: 12px;
-    padding: 10px 40px 10px 14px;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
+    border-radius: 30px; /* More pill-shaped */
+    padding: 8px 16px;
     box-shadow: var(--glass-outer-shadow), var(--glass-inner-shadow);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: auto;
-    min-width: 220px;
-    max-width: 320px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    opacity: 0.5; /* Less obvious by default */
+    min-width: 60px;
+    pointer-events: auto; /* Container is clickable */
 }
 
-.slide-selector:hover, .slide-selector:focus {
+.slide-selector-container:hover {
+    opacity: 1;
+    transform: scale(1.05);
     background: var(--surface-hover);
     box-shadow: var(--glass-outer-shadow), var(--glass-inner-shadow), 0 8px 24px var(--shadow-lg);
-    outline: none;
 }
 
-.selector-icon {
+.slide-counter {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+    pointer-events: none; /* Let clicks pass to select */
+}
+
+.slide-selector {
     position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-muted);
-}
-
-.selector-icon i {
-    width: 16px;
-    height: 16px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Invisible but clickable */
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    z-index: 2;
 }
 
 @media print {

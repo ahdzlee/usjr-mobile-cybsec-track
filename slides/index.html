@@ -1014,10 +1014,10 @@ class TodoNotifier extends StateNotifier&lt;List&lt;Todo&gt;&gt; {
 
     <!-- Slide Selector (Replaces default slide number) -->
     <div class="slide-selector-container">
+      <div id="slide-counter" class="slide-counter"></div>
       <select id="slide-selector" class="slide-selector">
         <!-- Options populated by JS -->
       </select>
-      <div class="selector-icon"><i data-lucide="chevron-up"></i></div>
     </div>
 
     <!-- Reveal.js -->
@@ -1097,7 +1097,9 @@ class TodoNotifier extends StateNotifier&lt;List&lt;Todo&gt;&gt; {
       // Slide Selector Logic
       document.addEventListener('DOMContentLoaded', () => {
         const selector = document.getElementById('slide-selector');
+        const counter = document.getElementById('slide-counter');
         const slides = document.querySelectorAll('.slides > section');
+        const totalSlides = slides.length;
         
         // Populate dropdown
         slides.forEach((slide, index) => {
@@ -1123,14 +1125,20 @@ class TodoNotifier extends StateNotifier&lt;List&lt;Todo&gt;&gt; {
           e.target.blur();
         });
 
+        // Function to update counter
+        const updateCounter = (index) => {
+            counter.innerText = `${index + 1} / ${totalSlides}`;
+            selector.value = index;
+        };
+
         // Update selector when slide changes
         Reveal.on('slidechanged', (event) => {
-          selector.value = event.indexh;
+          updateCounter(event.indexh);
         });
         
         // Set initial value
         if (Reveal.getIndices()) {
-            selector.value = Reveal.getIndices().h;
+            updateCounter(Reveal.getIndices().h);
         }
       });
     </script>
