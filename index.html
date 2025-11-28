@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>USJ-R SCS Specialization Track</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"
+    />
+
+    <!-- Custom Theme -->
+    <link rel="stylesheet" href="slides/styles/custom.css" />
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--background);
+        background-image: var(--background-gradient);
+        font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        color: var(--text);
+      }
+      .landing-page {
+        text-align: center;
+        padding: 48px 40px;
+        border-radius: 24px;
+        background: var(--surface);
+        backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+        -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+        box-shadow: var(--glass-outer-shadow), var(--glass-inner-shadow);
+        border: var(--glass-border);
+        max-width: 800px;
+        width: 90%;
+      }
+      .landing-page h1 {
+        font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+        font-size: 2.2rem;
+        margin: 0 0 0.4em;
+      }
+      .landing-page p {
+        margin: 0 0 2.5em;
+        color: var(--text-muted);
+        font-size: 1.1rem;
+      }
+      .track-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 32px;
+        flex-wrap: wrap;
+      }
+      .track-card {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        background: var(--background);
+        border-radius: 16px;
+        overflow: hidden;
+        width: 300px;
+        box-shadow: var(--shadow-md);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid var(--border);
+      }
+      .track-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-xl);
+      }
+      .track-image {
+        height: 180px;
+        width: 100%;
+        object-fit: cover;
+      }
+      .track-info {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        flex-grow: 1;
+        background: var(--surface);
+      }
+      .track-title {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: var(--text);
+        margin: 0;
+      }
+      .track-desc {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        margin: 0;
+        line-height: 1.5;
+      }
+      .track-btn {
+        margin-top: auto;
+        padding: 10px 24px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+        color: #fff;
+        transition: opacity 0.2s;
+      }
+      .track-card:hover .track-btn {
+        opacity: 0.9;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+      <span class="sun-icon">&#9728;</span>
+      <span class="moon-icon">&#9790;</span>
+    </button>
+
+    <div class="landing-page">
+      <h1>USJ-R SCS Specialization Track</h1>
+      <p>Select a specialization track to view its presentation.</p>
+      <div class="track-buttons">
+        <!-- Mobile Track Card -->
+        <a href="slides/mobile.html" class="track-card">
+          <img 
+            src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=600&q=80" 
+            alt="Mobile Development" 
+            class="track-image"
+          />
+          <div class="track-info">
+            <h3 class="track-title">Mobile Development</h3>
+            <p class="track-desc">Master Flutter to build beautiful, native-compiled applications for mobile, web, and desktop.</p>
+            <span class="track-btn">Enter Track</span>
+          </div>
+        </a>
+
+        <!-- Cybersecurity Track Card -->
+        <a href="slides/cybsec.html" class="track-card">
+          <img 
+            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" 
+            alt="Cybersecurity" 
+            class="track-image"
+          />
+          <div class="track-info">
+            <h3 class="track-title">Cybersecurity</h3>
+            <p class="track-desc">Learn defensive and offensive security techniques to protect systems and networks.</p>
+            <span class="track-btn">Enter Track</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      // Theme toggle functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      const body = document.body;
+
+      // Check for saved theme preference
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      body.setAttribute('data-theme', savedTheme);
+
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+    </script>
+  </body>
+</html>
