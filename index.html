@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>USJ-R SCS Specialization Track</title>
+    <title>USJ-R SCS Specialization Track | Shape Your Future</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,166 +14,1037 @@
     />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
     />
 
     <!-- Custom Theme -->
     <link rel="stylesheet" href="slides/styles/custom.css" />
     <link rel="stylesheet" href="slides/styles/mobile.css" />
     <style>
-      body {
+      :root {
+        --landing-primary: #6366f1;
+        --landing-secondary: #8b5cf6;
+        --landing-accent: #06b6d4;
+        --landing-success: #10b981;
+        --landing-warning: #f59e0b;
+        --landing-rose: #f43f5e;
+        --mobile-gradient: linear-gradient(135deg, #0ea5e9 0%, #6366f1 50%, #8b5cf6 100%);
+        --cyber-gradient: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #0ea5e9 100%);
+      }
+
+      * {
         margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
         min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+        font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        color: #f8fafc;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      /* Animated background */
+      .bg-animation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .bg-animation svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      /* Floating orbs */
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.4;
+        animation: float-orb 20s ease-in-out infinite;
+      }
+
+      .orb-1 {
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, #6366f1 0%, transparent 70%);
+        top: -200px;
+        left: -200px;
+        animation-delay: 0s;
+      }
+
+      .orb-2 {
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, #06b6d4 0%, transparent 70%);
+        bottom: -150px;
+        right: -150px;
+        animation-delay: -7s;
+      }
+
+      .orb-3 {
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, #8b5cf6 0%, transparent 70%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-delay: -14s;
+      }
+
+      .orb-4 {
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, #10b981 0%, transparent 70%);
+        top: 20%;
+        right: 10%;
+        animation-delay: -5s;
+      }
+
+      @keyframes float-orb {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        25% { transform: translate(30px, -30px) scale(1.1); }
+        50% { transform: translate(-20px, 20px) scale(0.95); }
+        75% { transform: translate(25px, 15px) scale(1.05); }
+      }
+
+      /* Grid pattern overlay */
+      .grid-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+        background-size: 60px 60px;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      /* Floating particles */
+      .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+        overflow: hidden;
+      }
+
+      .particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        animation: rise 15s linear infinite;
+      }
+
+      .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 12s; }
+      .particle:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 14s; }
+      .particle:nth-child(3) { left: 30%; animation-delay: 4s; animation-duration: 11s; }
+      .particle:nth-child(4) { left: 40%; animation-delay: 1s; animation-duration: 16s; }
+      .particle:nth-child(5) { left: 50%; animation-delay: 3s; animation-duration: 13s; }
+      .particle:nth-child(6) { left: 60%; animation-delay: 5s; animation-duration: 15s; }
+      .particle:nth-child(7) { left: 70%; animation-delay: 0.5s; animation-duration: 12s; }
+      .particle:nth-child(8) { left: 80%; animation-delay: 2.5s; animation-duration: 14s; }
+      .particle:nth-child(9) { left: 90%; animation-delay: 1.5s; animation-duration: 11s; }
+      .particle:nth-child(10) { left: 15%; animation-delay: 3.5s; animation-duration: 16s; }
+      .particle:nth-child(11) { left: 25%; animation-delay: 4.5s; animation-duration: 13s; }
+      .particle:nth-child(12) { left: 75%; animation-delay: 0.8s; animation-duration: 15s; }
+
+      @keyframes rise {
+        0% { bottom: -10px; opacity: 0; transform: translateX(0) scale(0.5); }
+        10% { opacity: 0.8; }
+        90% { opacity: 0.8; }
+        100% { bottom: 100vh; opacity: 0; transform: translateX(30px) scale(1); }
+      }
+
+      /* Main content */
+      .main-content {
+        position: relative;
+        z-index: 10;
+        padding: 40px 20px;
+        width: 100%;
+        max-width: 1200px;
+      }
+
+      /* Hero section */
+      .hero {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 20px;
+        background: rgba(99, 102, 241, 0.15);
+        border: 1px solid rgba(99, 102, 241, 0.3);
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: #a5b4fc;
+        margin-bottom: 24px;
+        animation: fadeInUp 0.6s ease-out;
+      }
+
+      .hero-badge svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .hero h1 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 20px;
+        animation: fadeInUp 0.6s ease-out 0.1s both;
+      }
+
+      .hero h1 .gradient-text {
+        background: linear-gradient(135deg, #a5b4fc 0%, #c4b5fd 30%, #67e8f9 70%, #6ee7b7 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-subtitle {
+        font-size: clamp(1.1rem, 2vw, 1.35rem);
+        color: #94a3b8;
+        max-width: 600px;
+        margin: 0 auto 32px;
+        line-height: 1.6;
+        animation: fadeInUp 0.6s ease-out 0.2s both;
+      }
+
+      .hero-cta {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: var(--background);
-        background-image: var(--background-gradient);
-        font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        color: var(--text);
-      }
-      .landing-page {
-        text-align: center;
-        padding: 48px 40px;
-        border-radius: 24px;
-        background: var(--surface);
-        backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-        -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-        box-shadow: var(--glass-outer-shadow), var(--glass-inner-shadow);
-        border: var(--glass-border);
-        max-width: 800px;
-        width: 90%;
-      }
-      .landing-page h1 {
-        font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
-        font-size: 2.2rem;
-        margin: 0 0 0.4em;
-      }
-      .landing-page p {
-        margin: 0 0 2.5em;
-        color: var(--text-muted);
-        font-size: 1.1rem;
-      }
-      .track-buttons {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 32px;
+        gap: 16px;
         flex-wrap: wrap;
+        animation: fadeInUp 0.6s ease-out 0.3s both;
       }
+
+      .scroll-indicator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        color: #64748b;
+        font-size: 0.85rem;
+        animation: bounce 2s infinite;
+      }
+
+      .scroll-indicator svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(8px); }
+      }
+
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Section title */
+      .section-header {
+        text-align: center;
+        margin-bottom: 48px;
+      }
+
+      .section-header h2 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #f1f5f9;
+        margin-bottom: 12px;
+      }
+
+      .section-header p {
+        color: #64748b;
+        font-size: 1.05rem;
+      }
+
+      /* Track cards */
+      .track-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 32px;
+        margin-bottom: 60px;
+      }
+
       .track-card {
+        position: relative;
         display: flex;
         flex-direction: column;
         text-decoration: none;
-        background: var(--background);
-        border-radius: 16px;
+        background: rgba(30, 41, 59, 0.6);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: 24px;
         overflow: hidden;
-        width: 300px;
-        box-shadow: var(--shadow-md);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border: 1px solid var(--border);
+        border: 1px solid rgba(148, 163, 184, 0.1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        animation: fadeInUp 0.6s ease-out 0.4s both;
       }
+
+      .track-card:nth-child(2) {
+        animation-delay: 0.5s;
+      }
+
+      .track-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .track-card.mobile::before {
+        background: var(--mobile-gradient);
+      }
+
+      .track-card.cyber::before {
+        background: var(--cyber-gradient);
+      }
+
       .track-card:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--shadow-xl);
+        transform: translateY(-12px) scale(1.02);
+        border-color: rgba(148, 163, 184, 0.25);
+        box-shadow: 
+          0 25px 50px -12px rgba(0, 0, 0, 0.5),
+          0 0 80px -20px rgba(99, 102, 241, 0.3);
       }
-      .track-image {
-        height: 180px;
+
+      .track-card:hover::before {
+        opacity: 1;
+      }
+
+      /* Track header with SVG illustration */
+      .track-header {
+        position: relative;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .track-header.mobile {
+        background: linear-gradient(135deg, rgba(14, 165, 233, 0.15) 0%, rgba(99, 102, 241, 0.15) 50%, rgba(139, 92, 246, 0.15) 100%);
+      }
+
+      .track-header.cyber {
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(6, 182, 212, 0.15) 50%, rgba(14, 165, 233, 0.15) 100%);
+      }
+
+      .track-illustration {
+        position: relative;
+        z-index: 2;
+      }
+
+      .track-header-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        object-fit: cover;
+        height: 100%;
+        opacity: 0.5;
       }
-      .track-info {
-        padding: 24px;
+
+      /* Animated icon container */
+      .icon-container {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 28px;
+        position: relative;
+        animation: float 4s ease-in-out infinite;
+      }
+
+      .icon-container.mobile {
+        background: var(--mobile-gradient);
+        box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.5);
+      }
+
+      .icon-container.cyber {
+        background: var(--cyber-gradient);
+        box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.5);
+      }
+
+      .icon-container svg {
+        width: 50px;
+        height: 50px;
+        color: white;
+      }
+
+      /* Decorative rings */
+      .icon-ring {
+        position: absolute;
+        border: 2px solid;
+        border-radius: 50%;
+        opacity: 0.2;
+        animation: pulse-ring 3s ease-out infinite;
+      }
+
+      .icon-ring:nth-child(1) {
+        width: 140px;
+        height: 140px;
+        animation-delay: 0s;
+      }
+
+      .icon-ring:nth-child(2) {
+        width: 180px;
+        height: 180px;
+        animation-delay: 0.5s;
+      }
+
+      .icon-ring:nth-child(3) {
+        width: 220px;
+        height: 220px;
+        animation-delay: 1s;
+      }
+
+      .mobile .icon-ring {
+        border-color: #6366f1;
+      }
+
+      .cyber .icon-ring {
+        border-color: #06b6d4;
+      }
+
+      @keyframes pulse-ring {
+        0% { transform: scale(0.8); opacity: 0.4; }
+        100% { transform: scale(1.2); opacity: 0; }
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+
+      /* Track content */
+      .track-content {
+        padding: 32px;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 12px;
+        gap: 20px;
         flex-grow: 1;
-        background: var(--surface);
       }
+
+      .track-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 6px 12px;
+        border-radius: 6px;
+        width: fit-content;
+      }
+
+      .track-label.mobile {
+        background: rgba(99, 102, 241, 0.15);
+        color: #a5b4fc;
+      }
+
+      .track-label.cyber {
+        background: rgba(6, 182, 212, 0.15);
+        color: #67e8f9;
+      }
+
       .track-title {
         font-family: 'Plus Jakarta Sans', sans-serif;
         font-weight: 700;
-        font-size: 1.2rem;
-        color: var(--text);
+        font-size: 1.5rem;
+        color: #f1f5f9;
         margin: 0;
       }
+
       .track-desc {
-        font-size: 0.9rem;
-        color: var(--text-muted);
+        font-size: 1rem;
+        color: #94a3b8;
         margin: 0;
+        line-height: 1.7;
+      }
+
+      /* Skills preview */
+      .track-skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+      }
+
+      .skill-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 6px 12px;
+        background: rgba(148, 163, 184, 0.1);
+        border: 1px solid rgba(148, 163, 184, 0.15);
+        border-radius: 8px;
+        font-size: 0.8rem;
+        color: #cbd5e1;
+        transition: all 0.2s ease;
+      }
+
+      .skill-tag svg {
+        width: 14px;
+        height: 14px;
+        opacity: 0.7;
+      }
+
+      .track-card:hover .skill-tag {
+        background: rgba(148, 163, 184, 0.15);
+        border-color: rgba(148, 163, 184, 0.25);
+      }
+
+      /* CTA button */
+      .track-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: auto;
+        padding: 14px 28px;
+        border-radius: 14px;
+        font-weight: 600;
+        font-size: 1rem;
+        color: #fff;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .track-cta.mobile {
+        background: var(--mobile-gradient);
+        box-shadow: 0 8px 24px -8px rgba(99, 102, 241, 0.5);
+      }
+
+      .track-cta.cyber {
+        background: var(--cyber-gradient);
+        box-shadow: 0 8px 24px -8px rgba(6, 182, 212, 0.5);
+      }
+
+      .track-cta svg {
+        width: 20px;
+        height: 20px;
+        transition: transform 0.3s ease;
+      }
+
+      .track-card:hover .track-cta svg {
+        transform: translateX(4px);
+      }
+
+      .track-cta::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s ease;
+      }
+
+      .track-card:hover .track-cta::before {
+        left: 100%;
+      }
+
+      /* Features section */
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 24px;
+        margin-bottom: 60px;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 24px;
+        background: rgba(30, 41, 59, 0.4);
+        border: 1px solid rgba(148, 163, 184, 0.08);
+        border-radius: 16px;
+        transition: all 0.3s ease;
+        animation: fadeInUp 0.6s ease-out 0.6s both;
+      }
+
+      .feature-item:nth-child(2) { animation-delay: 0.7s; }
+      .feature-item:nth-child(3) { animation-delay: 0.8s; }
+
+      .feature-item:hover {
+        background: rgba(30, 41, 59, 0.6);
+        border-color: rgba(148, 163, 184, 0.15);
+        transform: translateY(-4px);
+      }
+
+      .feature-icon {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+        border-radius: 12px;
+        flex-shrink: 0;
+      }
+
+      .feature-icon svg {
+        width: 24px;
+        height: 24px;
+        color: #a5b4fc;
+      }
+
+      .feature-content h3 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: #f1f5f9;
+        margin-bottom: 6px;
+      }
+
+      .feature-content p {
+        font-size: 0.9rem;
+        color: #64748b;
         line-height: 1.5;
       }
-      .track-btn {
-        margin-top: auto;
-        padding: 10px 24px;
-        border-radius: 999px;
-        font-weight: 600;
-        font-size: 0.9rem;
-        background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-        color: #fff;
-        transition: opacity 0.2s;
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        padding: 40px 20px;
+        border-top: 1px solid rgba(148, 163, 184, 0.1);
+        animation: fadeInUp 0.6s ease-out 0.9s both;
       }
-      .track-card:hover .track-btn {
-        opacity: 0.9;
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .footer-logo svg {
+        width: 32px;
+        height: 32px;
+        color: #6366f1;
+      }
+
+      .footer-logo span {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: #f1f5f9;
+      }
+
+      .footer p {
+        color: #475569;
+        font-size: 0.9rem;
+      }
+
+      /* Theme toggle override for dark landing */
+      .theme-toggle {
+        background: rgba(30, 41, 59, 0.8) !important;
+        border: 1px solid rgba(148, 163, 184, 0.2) !important;
+        color: #f1f5f9 !important;
+      }
+
+      .theme-toggle:hover {
+        background: rgba(51, 65, 85, 0.9) !important;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .track-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+
+        .features {
+          grid-template-columns: 1fr;
+        }
+
+        .orb { opacity: 0.25; }
       }
     </style>
   </head>
   <body>
+    <!-- Animated background elements -->
+    <div class="bg-animation">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="orb orb-4"></div>
+    </div>
+    <div class="grid-overlay"></div>
+    <div class="particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+
+    <!-- SVG Pattern Background -->
+    <svg class="bg-animation" style="position: fixed; opacity: 0.03;">
+      <defs>
+        <pattern id="circuit-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+          <circle cx="50" cy="50" r="2" fill="#6366f1"/>
+          <path d="M50 0 L50 48 M50 52 L50 100 M0 50 L48 50 M52 50 L100 50" stroke="#6366f1" stroke-width="0.5" fill="none"/>
+          <circle cx="0" cy="0" r="1.5" fill="#06b6d4"/>
+          <circle cx="100" cy="0" r="1.5" fill="#06b6d4"/>
+          <circle cx="0" cy="100" r="1.5" fill="#06b6d4"/>
+          <circle cx="100" cy="100" r="1.5" fill="#06b6d4"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#circuit-pattern)"/>
+    </svg>
+
     <!-- Theme Toggle Button -->
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
       <span class="sun-icon">&#9728;</span>
       <span class="moon-icon">&#9790;</span>
     </button>
 
-    <div class="landing-page">
-      <h1>USJ-R SCS Specialization Track</h1>
-      <p>Select a specialization track to view its presentation.</p>
-      <div class="track-buttons">
-        <!-- Mobile Track Card -->
-        <a href="slides/mobile.html" class="track-card">
-          <img 
-            src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=600&q=80" 
-            alt="Mobile Development" 
-            class="track-image"
-          />
-          <div class="track-info">
-            <h3 class="track-title">Mobile Development</h3>
-            <p class="track-desc">Master Flutter to build beautiful, native-compiled applications for mobile, web, and desktop.</p>
-            <span class="track-btn">Enter Track</span>
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+          USJ-R School of Computer Studies
+        </div>
+        <h1>
+          Shape Your Future in<br/>
+          <span class="gradient-text">Technology</span>
+        </h1>
+        <p class="hero-subtitle">
+          Choose your specialization track and embark on a transformative journey 
+          to become a skilled professional in the tech industry.
+        </p>
+        <div class="hero-cta">
+          <div class="scroll-indicator">
+            <span>Explore Tracks</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
           </div>
-        </a>
+        </div>
+      </section>
 
-        <!-- Cybersecurity Track Card -->
-        <a href="slides/cybsec.html" class="track-card">
-          <img 
-            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" 
-            alt="Cybersecurity" 
-            class="track-image"
-          />
-          <div class="track-info">
-            <h3 class="track-title">Cybersecurity</h3>
-            <p class="track-desc">Learn defensive and offensive security techniques to protect systems and networks.</p>
-            <span class="track-btn">Enter Track</span>
+      <!-- Specialization Tracks -->
+      <section>
+        <div class="section-header">
+          <h2>Choose Your Path</h2>
+          <p>Two exciting career tracks designed for the future</p>
+        </div>
+
+        <div class="track-grid">
+          <!-- Mobile Development Track -->
+          <a href="slides/mobile.html" class="track-card mobile">
+            <div class="track-header mobile">
+              <!-- Decorative SVG background -->
+              <svg class="track-header-bg" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                  <linearGradient id="mobile-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.3"/>
+                    <stop offset="50%" stop-color="#6366f1" stop-opacity="0.2"/>
+                    <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.3"/>
+                  </linearGradient>
+                </defs>
+                <!-- Abstract mobile/app shapes -->
+                <rect x="20" y="40" width="60" height="100" rx="10" fill="none" stroke="#6366f1" stroke-width="1" opacity="0.3"/>
+                <rect x="30" y="55" width="40" height="60" rx="4" fill="#6366f1" opacity="0.1"/>
+                <circle cx="50" cy="130" r="5" fill="#6366f1" opacity="0.2"/>
+                
+                <rect x="320" y="30" width="50" height="80" rx="8" fill="none" stroke="#8b5cf6" stroke-width="1" opacity="0.3"/>
+                <rect x="328" y="42" width="34" height="45" rx="3" fill="#8b5cf6" opacity="0.1"/>
+                
+                <path d="M150 180 Q200 140 250 180" stroke="#0ea5e9" stroke-width="2" fill="none" opacity="0.2"/>
+                <path d="M120 170 Q200 120 280 170" stroke="#6366f1" stroke-width="1" fill="none" opacity="0.15"/>
+                
+                <!-- Flutter-inspired diamond shapes -->
+                <polygon points="200,20 220,50 200,80 180,50" fill="url(#mobile-grad)" opacity="0.4"/>
+                <polygon points="200,35 210,50 200,65 190,50" fill="#0ea5e9" opacity="0.5"/>
+              </svg>
+              
+              <div class="track-illustration">
+                <div class="icon-ring"></div>
+                <div class="icon-ring"></div>
+                <div class="icon-ring"></div>
+                <div class="icon-container mobile">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="5" y="2" width="14" height="20" rx="3"/>
+                    <line x1="12" y1="18" x2="12" y2="18.01" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M9 6h6M9 9h6M9 12h4"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            
+            <div class="track-content">
+              <span class="track-label mobile">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+                High Demand
+              </span>
+              <h3 class="track-title">Mobile Development</h3>
+              <p class="track-desc">
+                Master Flutter to build beautiful, cross-platform applications. 
+                Create stunning mobile, web, and desktop apps from a single codebase.
+              </p>
+              <div class="track-skills">
+                <span class="skill-tag">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/>
+                  </svg>
+                  Flutter
+                </span>
+                <span class="skill-tag">Dart</span>
+                <span class="skill-tag">Firebase</span>
+                <span class="skill-tag">UI/UX</span>
+              </div>
+              <span class="track-cta mobile">
+                Start Learning
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Cybersecurity Track -->
+          <a href="slides/cybsec.html" class="track-card cyber">
+            <div class="track-header cyber">
+              <!-- Decorative SVG background -->
+              <svg class="track-header-bg" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                  <linearGradient id="cyber-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#10b981" stop-opacity="0.3"/>
+                    <stop offset="50%" stop-color="#06b6d4" stop-opacity="0.2"/>
+                    <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.3"/>
+                  </linearGradient>
+                </defs>
+                <!-- Security/cyber shapes -->
+                <circle cx="60" cy="100" r="40" fill="none" stroke="#10b981" stroke-width="1" opacity="0.3"/>
+                <circle cx="60" cy="100" r="25" fill="none" stroke="#10b981" stroke-width="1" opacity="0.2"/>
+                <path d="M60 75 L60 85 M60 115 L60 125 M35 100 L45 100 M75 100 L85 100" stroke="#10b981" stroke-width="2" opacity="0.3"/>
+                
+                <path d="M320 60 L340 80 L320 100 L300 80 Z" fill="none" stroke="#06b6d4" stroke-width="1" opacity="0.3"/>
+                <circle cx="320" cy="80" r="10" fill="#06b6d4" opacity="0.1"/>
+                
+                <!-- Network lines -->
+                <line x1="100" y1="100" x2="150" y2="80" stroke="#06b6d4" stroke-width="1" opacity="0.2"/>
+                <line x1="150" y1="80" x2="200" y2="100" stroke="#06b6d4" stroke-width="1" opacity="0.2"/>
+                <line x1="200" y1="100" x2="250" y2="70" stroke="#06b6d4" stroke-width="1" opacity="0.2"/>
+                <line x1="250" y1="70" x2="300" y2="90" stroke="#06b6d4" stroke-width="1" opacity="0.2"/>
+                <circle cx="150" cy="80" r="4" fill="#10b981" opacity="0.4"/>
+                <circle cx="200" cy="100" r="4" fill="#06b6d4" opacity="0.4"/>
+                <circle cx="250" cy="70" r="4" fill="#10b981" opacity="0.4"/>
+                
+                <!-- Lock icon outline -->
+                <rect x="180" y="130" width="40" height="35" rx="4" fill="none" stroke="#0ea5e9" stroke-width="1" opacity="0.3"/>
+                <path d="M188 130 L188 120 Q200 100 212 120 L212 130" fill="none" stroke="#0ea5e9" stroke-width="1" opacity="0.3"/>
+              </svg>
+              
+              <div class="track-illustration">
+                <div class="icon-ring"></div>
+                <div class="icon-ring"></div>
+                <div class="icon-ring"></div>
+                <div class="icon-container cyber">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <path d="M9 12l2 2 4-4"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            
+            <div class="track-content">
+              <span class="track-label cyber">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm0-8v6h2V7h-2z"/>
+                </svg>
+                Critical Field
+              </span>
+              <h3 class="track-title">Cybersecurity</h3>
+              <p class="track-desc">
+                Learn to defend and protect digital assets. Master ethical hacking, 
+                threat analysis, and security operations to safeguard organizations.
+              </p>
+              <div class="track-skills">
+                <span class="skill-tag">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2"/>
+                    <path d="M7 11V7a5 5 0 0110 0v4"/>
+                  </svg>
+                  Security
+                </span>
+                <span class="skill-tag">Networking</span>
+                <span class="skill-tag">Ethical Hacking</span>
+                <span class="skill-tag">SIEM</span>
+              </div>
+              <span class="track-cta cyber">
+                Start Learning
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="features">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+              <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/>
+            </svg>
           </div>
-        </a>
-      </div>
-    </div>
+          <div class="feature-content">
+            <h3>Industry-Aligned Curriculum</h3>
+            <p>Courses designed with input from tech professionals to ensure relevance.</p>
+          </div>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 20h9"/>
+              <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h3>Hands-On Projects</h3>
+            <p>Build real applications and solve actual security challenges.</p>
+          </div>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+              <path d="M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h3>Expert Mentorship</h3>
+            <p>Learn from experienced faculty and industry practitioners.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-logo">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          <span>USJ-R SCS</span>
+        </div>
+        <p>School of Computer Studies &mdash; Shaping tomorrow's tech leaders</p>
+      </footer>
+    </main>
 
     <script>
-      // Theme toggle functionality
+      // Theme toggle functionality (keeping dark theme for landing)
       const themeToggle = document.getElementById('theme-toggle');
       const body = document.body;
 
-      // Check for saved theme preference
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      body.setAttribute('data-theme', savedTheme);
+      // For this landing page, we keep the dark theme
+      // but still allow toggle for accessibility
+      body.setAttribute('data-theme', 'dark');
 
       themeToggle.addEventListener('click', () => {
+        // Toggle is available but landing stays dark-themed
         const currentTheme = body.getAttribute('data-theme');
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
         body.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
+      });
+
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Add parallax effect to orbs on mouse move
+      document.addEventListener('mousemove', (e) => {
+        const orbs = document.querySelectorAll('.orb');
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+        
+        orbs.forEach((orb, index) => {
+          const speed = (index + 1) * 15;
+          const xOffset = (x - 0.5) * speed;
+          const yOffset = (y - 0.5) * speed;
+          orb.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+        });
       });
     </script>
   </body>
