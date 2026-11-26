@@ -1735,26 +1735,103 @@
     box-shadow: var(--glass-outer-shadow), var(--glass-inner-shadow), 0 8px 24px var(--shadow-lg);
 }
 
+.slide-selector-container.open {
+    opacity: 1;
+    transform: none;
+    background: var(--surface-hover);
+}
+
 .slide-counter {
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-weight: 600;
     color: var(--text);
     white-space: nowrap;
-    pointer-events: none; /* Let clicks pass to select */
+    text-transform: none;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
 
-.slide-selector {
+.slide-counter:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 6px;
+    border-radius: var(--radius-sm);
+}
+
+.slide-menu {
     position: absolute;
-    top: 0;
+    bottom: calc(100% + 12px);
     left: 0;
+    margin: 0;
+    padding: 6px;
+    list-style: none;
+    width: max-content;
+    min-width: 240px;
+    max-width: min(380px, calc(100vw - 40px));
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    background: var(--surface-solid);
+    border: var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--glass-outer-shadow), 0 12px 40px var(--shadow-lg);
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+    animation: slide-menu-in 0.18s ease-out;
+}
+
+@keyframes slide-menu-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-menu li {
+    margin: 0;
+}
+
+.slide-menu-item {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
     width: 100%;
-    height: 100%;
-    opacity: 0; /* Invisible but clickable */
+    padding: 8px 12px;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: none;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: left;
+    text-transform: none;
     cursor: pointer;
-    appearance: none;
-    -webkit-appearance: none;
-    z-index: 2;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.slide-menu-item .slide-menu-number {
+    flex: 0 0 1.6em;
+    text-align: right;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.slide-menu-item:hover,
+.slide-menu-item:focus-visible {
+    background: color-mix(in srgb, var(--primary) 12%, transparent);
+    outline: none;
+}
+
+.slide-menu-item[aria-current="true"] {
+    background: var(--primary);
+    color: var(--background);
+    font-weight: 600;
+}
+
+.slide-menu-item[aria-current="true"] .slide-menu-number {
+    color: inherit;
+    opacity: 0.75;
 }
 
 @media print {

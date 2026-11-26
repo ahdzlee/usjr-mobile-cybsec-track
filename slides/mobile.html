@@ -891,11 +891,17 @@
     </div>
 
     <!-- Slide Selector (Replaces default slide number) -->
-    <div class="slide-selector-container">
-      <div id="slide-counter" class="slide-counter"></div>
-      <select id="slide-selector" class="slide-selector">
-        <!-- Options populated by JS -->
-      </select>
+    <div id="slide-selector" class="slide-selector-container">
+      <button
+        id="slide-counter"
+        class="slide-counter"
+        type="button"
+        aria-haspopup="menu"
+        aria-expanded="false"
+        aria-controls="slide-menu"
+        aria-label="Jump to slide"
+      ></button>
+      <ul id="slide-menu" class="slide-menu" role="menu" hidden></ul>
     </div>
 
     <!-- Reveal.js -->
@@ -971,54 +977,7 @@
       Reveal.on('fragmentshown', () => {
         lucide.createIcons();
       });
-
-      // Slide Selector Logic
-      document.addEventListener('DOMContentLoaded', () => {
-        const selector = document.getElementById('slide-selector');
-        const counter = document.getElementById('slide-counter');
-        const slides = document.querySelectorAll('.slides > section');
-        const totalSlides = slides.length;
-        
-        // Populate dropdown
-        slides.forEach((slide, index) => {
-          const option = document.createElement('option');
-          option.value = index;
-          
-          // Try to find a title
-          let title = `Slide ${index + 1}`;
-          const titleEl = slide.querySelector('h1, h2, .hero-title, .section-title');
-          if (titleEl) {
-            // clean up icon text
-            title = `${index + 1}. ${titleEl.innerText.trim()}`;
-          }
-          
-          option.text = title;
-          selector.appendChild(option);
-        });
-
-        // Update selector on change
-        selector.addEventListener('change', (e) => {
-          Reveal.slide(parseInt(e.target.value));
-          // Remove focus to allow keyboard navigation to work immediately
-          e.target.blur();
-        });
-
-        // Function to update counter
-        const updateCounter = (index) => {
-            counter.innerText = `${index + 1} / ${totalSlides}`;
-            selector.value = index;
-        };
-
-        // Update selector when slide changes
-        Reveal.on('slidechanged', (event) => {
-          updateCounter(event.indexh);
-        });
-        
-        // Set initial value
-        if (Reveal.getIndices()) {
-            updateCounter(Reveal.getIndices().h);
-        }
-      });
     </script>
+    <script src="scripts/slide-selector.js"></script>
   </body>
 </html>
